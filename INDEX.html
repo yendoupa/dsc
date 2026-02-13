@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PANDAM Docs</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>PANDAM Docs</h1>
+    <p>Votre aperçu PDF sécurisé et professionnel</p>
+  </header>
+
+  <main>
+    <!-- Aperçu PDF réduit -->
+    <div class="pdf-container" id="pdfContainer">
+      <iframe id="pdfFrame" src="./projet personnel et professionnel.pdf#page=1&zoom=50" title="Aperçu PDF"></iframe>
+    </div>
+
+    <!-- Boutons -->
+    <div class="buttons">
+      <button class="read-btn" onclick="agrandirPDF()">Lire</button>
+      <a href="./projet personnel et professionnel.pdf" download>
+        <button class="download-btn">Télécharger</button>
+      </a>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 PANDAM Docs - Tous droits réservés</p>
+  </footer>
+
+  <script>
+    function agrandirPDF() {
+      const container = document.getElementById('pdfContainer');
+      const iframe = document.getElementById('pdfFrame');
+
+      // Agrandit le PDF au maximum de l'écran (responsive)
+      container.style.width = '90vw';
+      container.style.height = '80vh';
+      container.style.boxShadow = '0 0 40px #ff66ff, 0 0 80px #cc00cc';
+
+      // Zoom PDF complet
+      iframe.src = './projet personnel et professionnel.pdf#zoom=100';
+    }
+  </script>
+</body>
+</html>
